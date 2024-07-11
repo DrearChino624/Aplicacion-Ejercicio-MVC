@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gestión de Tareas</h1>
+    
+    <!-- Formulario de búsqueda -->
+    <form action="/buscar" method="post">
+        <label for="fecha_inicio">Fecha de Inicio:</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+        <label for="fecha_fin">Fecha de Fin:</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" required>
+    <br>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <!-- Tabla de tareas -->
+    <div class="tareas">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Tiempo Estimado</th>
+                    <th>Estado</th>
+                    <th>Encargado</th>
+                    <th>Tiempo de Retraso (días)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tarea in tareas %}
+                <tr>
+                    <td>{{ tarea[0] }}</td>
+                    <td>{{ tarea[1] }}</td>
+                    <td>{{ tarea[2] }}</td>
+                    <td>{{ tarea[3] }}</td>
+                    <td>{{ tarea[4] }}</td>
+                    <td>{{ tarea[5] }}</td>
+                    <td>{{ tarea[6] }}</td> <!-- Mostrar días de retraso -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
