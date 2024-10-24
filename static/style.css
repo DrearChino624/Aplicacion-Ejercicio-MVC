@@ -3,13 +3,18 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo tipo estadio */
 }
 
 /* Estilos para el encabezado */
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: #333;
+    color: #28a745; /* Verde cancha */
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000; /* Sombra para efecto 3D */
 }
 
 /* Estilos para el formulario de búsqueda */
@@ -21,57 +26,91 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
 }
 
 input[type="date"],
 button {
-    padding: 8px;
+    padding: 10px;
     margin: 5px;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 14px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #28a745; /* Verde tipo uniforme */
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid #155724; /* Borde más oscuro */
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #218838; /* Verde más intenso al pasar */
 }
 
-/* Estilos para la lista de tareas */
+/* Estilos para la tabla de jugadores */
 .tareas {
     width: 80%;
     margin: 0 auto;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-/* Estilos para la tabla de tareas */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #007bff; /* Azul tipo uniforme */
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilo especial para filas de jugadores retirados */
+tr.retirado td {
+    color: #6c757d; /* Gris para jugadores retirados */
+    text-decoration: line-through; /* Tachado para retirados */
+}
+
+/* Hover en filas para efecto */
+tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+/* Estilos para campos importantes como goles */
+td.goles {
+    font-weight: bold;
+    color: #d9534f; /* Rojo para resaltar los goles */
+}
+
+/* Responsive para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
 }

@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gestión de Tareas</title>
+    <title>Gestión de Jugadores</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Gestión de Tareas</h1>
+    <h1>Gestión de Jugadores de Fútbol</h1>
     
     <!-- Formulario de búsqueda -->
     <form action="/buscar" method="post">
@@ -18,30 +18,30 @@
         <button type="submit">Buscar</button>
     </form>
     
-    <!-- Tabla de tareas -->
-    <div class="tareas">
+    <!-- Tabla de jugadores -->
+    <div class="jugadores">
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Tiempo Estimado</th>
+                    <th>Nombre Jugador</th>
+                    <th>Fecha Último Encuentro</th>
+                    <th>Goles Último Encuentro</th>
                     <th>Estado</th>
-                    <th>Encargado</th>
-                    <th>Tiempo de Retraso (días)</th>
+                    <th>Equipo</th>
+                    <th>Promedio Goles</th>
                 </tr>
             </thead>
             <tbody>
-                {% for tarea in tareas %}
+                {% for jugador in jugadores %}
                 <tr>
-                    <td>{{ tarea[0] }}</td>
-                    <td>{{ tarea[1] }}</td>
-                    <td>{{ tarea[2] }}</td>
-                    <td>{{ tarea[3] }}</td>
-                    <td>{{ tarea[4] }}</td>
-                    <td>{{ tarea[5] }}</td>
-                    <td>{{ tarea[6] }}</td> <!-- Mostrar días de retraso -->
+                    <td>{{ jugador[0] }}</td>
+                    <td>{{ jugador[1] }}</td>
+                    <td>{{ jugador[2] }}</td>
+                    <td>{{ jugador[3] }}</td>
+                    <td>{{ jugador[4] }}</td>
+                    <td>{{ jugador[5] }}</td>
+                    <td>{{ jugador[6] }}</td> <!-- Mostrar promedio de goles -->
                 </tr>
                 {% endfor %}
             </tbody>
